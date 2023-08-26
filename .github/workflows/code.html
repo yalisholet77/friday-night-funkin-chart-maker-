@@ -1,0 +1,77 @@
+Creating a complete Friday Night Funkin' chart maker with JavaScript and HTML involves quite a bit of code and interactivity. Below is a simplified example to get you started. Keep in mind that this won't cover every detail of a full-fledged chart maker, but it's a basic framework you can build upon:
+
+HTML (index.html):
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNF Chart Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="chartCanvas"></canvas>
+    <button id="addNoteButton">Add Note</button>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+CSS (styles.css):
+```css
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+button {
+    margin-top: 10px;
+}
+```
+
+JavaScript (script.js):
+```javascript
+const canvas = document.getElementById("chartCanvas");
+const ctx = canvas.getContext("2d");
+const addNoteButton = document.getElementById("addNoteButton");
+
+const notes = [];
+
+canvas.width = 800;
+canvas.height = 400;
+
+function drawChart() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw chart elements here using ctx.fillRect(), ctx.drawImage(), etc.
+    // Loop through 'notes' array and draw notes on the canvas.
+
+    requestAnimationFrame(drawChart);
+}
+
+function addNote() {
+    // Logic to add a note to the 'notes' array.
+
+    // For example:
+    notes.push({
+        time: Date.now(),
+        lane: Math.floor(Math.random() * 4) // 4 lanes for simplicity
+    });
+}
+
+addNoteButton.addEventListener("click", addNote);
+
+drawChart();
+```
+
+This is a simple example that creates a canvas for the chart and a button to add notes. The JavaScript code handles drawing the chart and adding notes to an array. You'll need to expand upon this with your logic for creating and displaying chart elements, managing note timing, lanes, and more.
+
+Remember, creating a complete chart maker involves various complexities and functionalities, such as user interactions, note snapping, exporting charts, and more. This basic example should give you a starting point to build upon.
