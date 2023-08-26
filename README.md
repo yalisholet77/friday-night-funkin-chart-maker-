@@ -1,2 +1,2 @@
-# friday-night-funkin-chart-maker-   this link
+# friday-night-funkin-chart-maker-link
 to make your custom songs here 
